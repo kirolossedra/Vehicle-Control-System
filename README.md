@@ -9,5 +9,5 @@
 
 ```mermaid
 stateDiagram-v2
-    s1 --> s2: A transition
+    Engine OFF --> Engine ON: a
 ```
