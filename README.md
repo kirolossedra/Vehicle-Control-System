@@ -7,11 +7,4 @@
 ![2023-03-01](https://user-images.githubusercontent.com/59807200/222007727-f79d92ca-f131-4f25-8d5e-d81d76e9df7b.png)
 
 
-```mermaid
-stateDiagram-v2
-    [*] --> First
-    state First {
-    in this state
-        
-    }
-```
+
