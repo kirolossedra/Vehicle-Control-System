@@ -8,3 +8,72 @@
 
 
 
+```mermaid
+classDef SimpleRemoteControl {
+  - slot: Command
+  + SimpleRemoteControl()
+  + setCommand(command: Command): void
+  + buttonWasPressed(): void
+}
+
+classDef Command {
+  + execute(): void
+}
+
+classDef Light {
+  + on(): void
+  + off(): void
+}
+
+classDef LightOnCommand {
+  - light: Light
+  + LightOnCommand(light: Light)
+  + execute(): void
+}
+
+classDef LightOffCommand {
+  - light: Light
+  + LightOffCommand(light: Light)
+  + execute(): void
+}
+
+classDef Stereo {
+  + on(): void
+  + off(): void
+  + setCD(): void
+  + setDVD(): void
+  + setRadio(): void
+  + setVolume(volume: int): void
+}
+
+classDef StereoOffCommand {
+  - stereo: Stereo
+  + StereoOffCommand(stereo: Stereo)
+  + execute(): void
+}
+
+classDef StereoOnWithCDCommand {
+  - stereo: Stereo
+  + StereoOnWithCDCommand(stereo: Stereo)
+  + execute(): void
+}
+
+SimpleRemoteControl -> Command: uses
+Light -> Command: implements
+LightOnCommand -> Command: implements
+LightOffCommand -> Command: implements
+LightOnCommand -> Light: uses
+LightOffCommand -> Light: uses
+Stereo -> Command: implements
+StereoOffCommand -> Command: implements
+StereoOnWithCDCommand -> Command: implements
+StereoOffCommand -> Stereo: uses
+StereoOnWithCDCommand -> Stereo: uses
+SimpleRemoteControl ..> LightOnCommand: slot
+SimpleRemoteControl ..> LightOffCommand: slot
+SimpleRemoteControl ..> StereoOnWithCDCommand: slot
+SimpleRemoteControl ..> StereoOffCommand: slot
+```
+
+
+
