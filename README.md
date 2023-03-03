@@ -17,7 +17,7 @@ class SimpleRemoteControl {
   + buttonWasPressed(): void
 }
 
-class Command {
+interface Command {
   + execute(): void
 }
 
