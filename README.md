@@ -10,35 +10,35 @@
 
 ```mermaid
 classDiagram
-classDef SimpleRemoteControl {
+class SimpleRemoteControl {
   - slot: Command
   + SimpleRemoteControl()
   + setCommand(command: Command): void
   + buttonWasPressed(): void
 }
 
-classDef Command {
+class Command {
   + execute(): void
 }
 
-classDef Light {
+class Light {
   + on(): void
   + off(): void
 }
 
-classDef LightOnCommand {
+class LightOnCommand {
   - light: Light
   + LightOnCommand(light: Light)
   + execute(): void
 }
 
-classDef LightOffCommand {
+class LightOffCommand {
   - light: Light
   + LightOffCommand(light: Light)
   + execute(): void
 }
 
-classDef Stereo {
+class Stereo {
   + on(): void
   + off(): void
   + setCD(): void
@@ -47,13 +47,13 @@ classDef Stereo {
   + setVolume(volume: int): void
 }
 
-classDef StereoOffCommand {
+class StereoOffCommand {
   - stereo: Stereo
   + StereoOffCommand(stereo: Stereo)
   + execute(): void
 }
 
-classDef StereoOnWithCDCommand {
+class StereoOnWithCDCommand {
   - stereo: Stereo
   + StereoOnWithCDCommand(stereo: Stereo)
   + execute(): void
