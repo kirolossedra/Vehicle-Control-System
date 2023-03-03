@@ -9,6 +9,7 @@
 
 
 ```mermaid
+classDiagram
 classDef SimpleRemoteControl {
   - slot: Command
   + SimpleRemoteControl()
